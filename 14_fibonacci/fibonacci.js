@@ -1,9 +1,19 @@
 const fibonacci = function(index) {
-    let sum = 0
-    for (let i = 1; i <= index; i ++) {
-        sum += i
+    let idx = parseInt(index)
+    if (idx < 0) {
+        return "OOPS"
     }
-    return sum 
+    let current = 0
+    let last = 0
+    for (let i = 1; i <= idx; i ++) {
+        saveCurrent = current
+        if (i == 1) {
+            current = 1
+        }
+        current = current + last
+        last = saveCurrent
+    }
+    return current
 };
 
 // Do not edit below this line
